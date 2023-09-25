@@ -13,7 +13,34 @@ const String kProduct = "Product";
 const String kStyle = "Style";
 const String kSize = "Size";
 //add to bag
-const String addToBagText="Add to Bag";
+const String kAddToBagText="Add to Bag";
 
 //filterView
-const String filtersText ="Filters";
+const String kFiltersText ="Filters";
+
+//Product detail
+const String kDetails= "Details";
+const String kCommnets= "Comments";
+const String kCompositions= "Conpositions";
+const String kOthers= "Others";
+const String kChooseSize = "Choose Size";
+const String kChooseColor = "Choose Color";
+const String kQuatity = "Quantity";
+const String kPromoCode = "Promo Code";
+const String kGoToConfirmation = "Go To Confirmation";
+//Confirmation page
+const String kConfirmationText = "Confirmation";
+const String kShoppingBagText = "Shoppipng Bag";
+const String kCreditCardText = "Credit Card";
+const String kCardHolderName ="Card Holder Name";
+const String kCardNumber = "Card Number";
+const String kExpDate = "Exp Date";
+const String kCVV = "CVV";
+const String kCountry="Country";
+const String kPaymentInformation ="Payment Information";
+
+
+const String kSubTotal = "SubTotal";
+const String kDelivery = "Delivery";
+const String kTotal = "Total";
+const String kConfirmOrder = "Confrim Order";

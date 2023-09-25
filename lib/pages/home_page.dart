@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:the_top_shop/constant/String.dart';
 import 'package:the_top_shop/constant/color.dart';
 import 'package:the_top_shop/data/vos/productvo.dart';
+import 'package:the_top_shop/pages/product_detail_page.dart';
 import '../constant/dimen.dart';
 
 
@@ -48,9 +49,14 @@ class ProductListSessionView extends StatelessWidget {
            return Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-                ImageAndPriceView(
-                    productImage: productVO.imageURL,
-                    productPrice: productVO.price,
+                GestureDetector(
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context )=> ProductDetailPage(productVO: productVO,)));
+                  },
+                  child: ImageAndPriceView(
+                      productImage: productVO.imageURL,
+                      productPrice: productVO.price,
+                  ),
                 ),
                 SizedBox(          
                   height: MediaQuery.of(context).size.height*0.08,
@@ -73,10 +79,11 @@ class ProductListSessionView extends StatelessWidget {
 
 class ImageAndPriceView extends StatelessWidget {
   const ImageAndPriceView({
-    super.key, required this.productImage, required this.productPrice,
+    super.key, required this.productImage, this.productPrice ,this.hasPriceTag =true
   });
   final String productImage ;
-  final int productPrice;
+  final int ?  productPrice;
+  final bool hasPriceTag;
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +98,7 @@ class ImageAndPriceView extends StatelessWidget {
             alignment: Alignment.topRight,
             child: Padding(
               padding: const EdgeInsets.only(top: kSP10x,right: kSP10x),
-              child: Container(
+              child:(hasPriceTag)? Container(
                 width: kPriceWidth,
                 height: kPriceHeight,
                 decoration: BoxDecoration(
@@ -101,7 +108,7 @@ class ImageAndPriceView extends StatelessWidget {
                 child: Center(
                   child: Text("\$ $productPrice"),
                 ),
-              ),
+              ):null,
             ))
         ],
       ),
@@ -162,7 +169,7 @@ class AddToBagView extends StatelessWidget {
             padding: EdgeInsets.only(right: kSP5x),
             child: Icon(Icons.work_outline,color: addToBagIconAndTextColor,),
           ),
-          Text(addToBagText,style: TextStyle(
+          Text(kAddToBagText,style: TextStyle(
             color: addToBagIconAndTextColor,
             fontWeight: FontWeight.w600
           ),)
@@ -185,7 +192,7 @@ class FilterSessionView extends StatelessWidget {
         spacing: 10,
         runSpacing: 5,
         children: [
-          Text(filtersText,style: TextStyle(
+          Text(kFiltersText,style: TextStyle(
             fontSize: kFilterTextFS,
             fontWeight: FontWeight.bold
           ),),
