@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:the_top_shop/constant/String.dart';
 import 'package:the_top_shop/constant/color.dart';
 import 'package:the_top_shop/constant/dimen.dart';
-import 'package:the_top_shop/constant/static%20_list.dart';
 import 'package:the_top_shop/data/vos/productvo.dart';
 import 'package:the_top_shop/pages/confirmation_page.dart';
 import 'package:the_top_shop/pages/home_page.dart';
